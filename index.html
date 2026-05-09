@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Task Planner</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/swapy@latest/dist/swapy.min.js"></script>
+</head>
+
+<body>
+
+  <div class="board">
+
+    <div class="board-headings">
+      <h2>🔥 Important</h2>
+      <h2>⚡ In Progress</h2>
+      <h2>🎯 Completed Soon</h2>
+    </div>
+
+    <div class="task-wrapper">
+      <div class="task-column">
+
+        <div class="task-slot" data-swapy-slot="slot1">
+          <div class="task-card" data-swapy-item="task1">
+            <input type="checkbox">
+            <span>Build landing page</span>
+          </div>
+        </div>
+
+        <div class="task-slot" data-swapy-slot="slot2">
+          <div class="task-card" data-swapy-item="task2">
+            <input type="checkbox">
+            <span>Fix responsive issue</span>
+          </div>
+        </div>
+
+        <div class="task-slot" data-swapy-slot="slot3">
+          <div class="task-card" data-swapy-item="task3">
+            <input type="checkbox">
+            <span>Create dashboard UI</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="task-column">
+
+        <div class="task-slot" data-swapy-slot="slot4">
+          <div class="task-card middle-card" data-swapy-item="task4">
+            <input type="checkbox">
+            <span>Review project code</span>
+          </div>
+        </div>
+
+        <div class="task-slot" data-swapy-slot="slot5">
+          <div class="task-card middle-card" data-swapy-item="task5">
+            <input type="checkbox">
+            <span>Prepare presentation</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="task-column">
+
+        <div class="task-slot" data-swapy-slot="slot6">
+          <div class="task-card right-card" data-swapy-item="task6">
+            <input type="checkbox">
+            <span>Gym workout</span>
+          </div>
+        </div>
+
+        <div class="task-slot" data-swapy-slot="slot7">
+          <div class="task-card right-card" data-swapy-item="task7">
+            <input type="checkbox">
+            <span>Read new article</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const container = document.querySelector(".task-wrapper");
+
+    Swapy.createSwapy(container, {
+      animation: "dynamic"
+    });
+    const newTaskInput = document.getElementById("new-task-input");
+  </script>
+
+</body>
+
+</html>
