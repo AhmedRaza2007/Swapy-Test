@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Advanced Task Planner</title>
+
+    <script src="https://unpkg.com/swapy@latest/dist/swapy.min.js"></script>
+
+    <link rel="stylesheet" href="copy.css" />
+  </head>
+
+  <body>
+    <div class="theme-toggle-box">
+      <button id="themeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="board">
+      <h1 class="main-title">Task Management Board</h1>
+
+      <div class="task-input-box">
+        <input type="text" id="taskInput" placeholder="Enter your task..." />
+
+        <input type="date" id="taskDate" />
+
+        <select id="taskCategory">
+          <option value="1">🔥 Important</option>
+
+          <option value="2">⚡ In Progress</option>
+
+          <option value="3">🎯 Completed Soon</option>
+        </select>
+
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="board-headings">
+        <h2>🔥 Important</h2>
+        <h2>⚡ In Progress</h2>
+        <h2>🎯 Completed Soon</h2>
+      </div>
+
+      <div class="task-wrapper">
+        <div class="task-column" id="column1"></div>
+
+        <div class="task-column" id="column2"></div>
+
+        <div class="task-column" id="column3"></div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
