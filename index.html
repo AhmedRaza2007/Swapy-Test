@@ -4,90 +4,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Task Planner</title>
-
   <link rel="stylesheet" href="style.css" />
-
   <script src="https://unpkg.com/swapy@latest/dist/swapy.min.js"></script>
+  <script src="https://kit.fontawesome.com/ca86787c55.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
   <div class="board">
-
     <div class="board-headings">
-      <h2>🔥 Important</h2>
-      <h2>⚡ In Progress</h2>
-      <h2>🎯 Completed Soon</h2>
+      <h2><i class="fa-solid fa-fire" style="color: rgb(255, 35, 0);"></i> Important</h2>
+      <h2><i class="fa-solid fa-cloud-bolt" style="color: rgb(0, 252, 170);"></i> In Progress</h2>
+      <h2><i class="fa-solid fa-file-circle-check" style="color: rgb(99, 230, 190);"></i> Completed Soon</h2>
     </div>
-
     <div class="task-wrapper">
       <div class="task-column">
-
         <div class="task-slot" data-swapy-slot="slot1">
           <div class="task-card" data-swapy-item="task1">
             <input type="checkbox">
             <span>Build landing page</span>
           </div>
         </div>
-
         <div class="task-slot" data-swapy-slot="slot2">
           <div class="task-card" data-swapy-item="task2">
             <input type="checkbox">
             <span>Fix responsive issue</span>
           </div>
         </div>
-
         <div class="task-slot" data-swapy-slot="slot3">
           <div class="task-card" data-swapy-item="task3">
             <input type="checkbox">
             <span>Create dashboard UI</span>
           </div>
         </div>
-
+        <div class="task-slot" data-swapy-slot="slot11">
+          <div class="task-card" data-swapy-item="task11">
+            <input type="checkbox">
+            <span>Add Smooth Animation</span>
+          </div>
+        </div>
       </div>
-
       <div class="task-column">
-
         <div class="task-slot" data-swapy-slot="slot4">
           <div class="task-card middle-card" data-swapy-item="task4">
             <input type="checkbox">
             <span>Review project code</span>
           </div>
         </div>
-
         <div class="task-slot" data-swapy-slot="slot5">
           <div class="task-card middle-card" data-swapy-item="task5">
             <input type="checkbox">
-            <span>Prepare presentation</span>
+            <span>Building Todo App</span>
           </div>
         </div>
-
-      </div>
-
-      <div class="task-column">
-
         <div class="task-slot" data-swapy-slot="slot6">
-          <div class="task-card right-card" data-swapy-item="task6">
+          <div class="task-card middle-card" data-swapy-item="task6">
+            <input type="checkbox">
+            <span>Working On Drop Zones</span>
+          </div>
+        </div>
+      </div>
+      <div class="task-column">
+        <div class="task-slot" data-swapy-slot="slot7">
+          <div class="task-card right-card" data-swapy-item="task7">
             <input type="checkbox">
             <span>Gym workout</span>
           </div>
         </div>
-
-        <div class="task-slot" data-swapy-slot="slot7">
-          <div class="task-card right-card" data-swapy-item="task7">
+        <div class="task-slot" data-swapy-slot="slot8">
+          <div class="task-card right-card" data-swapy-item="task8">
             <input type="checkbox">
-            <span>Read new article</span>
+            <span>HTML Basics</span>
           </div>
         </div>
-
+        <div class="task-slot" data-swapy-slot="slot9">
+          <div class="task-card right-card" data-swapy-item="task9">
+            <input type="checkbox">
+            <span>CSS Flexbox</span>
+          </div>
+        </div>
+        <div class="task-slot" data-swapy-slot="slot10">
+          <div class="task-card right-card" data-swapy-item="task10">
+            <input type="checkbox">
+            <span>GitHub Setup</span>
+          </div>
+        </div>
       </div>
-
     </div>
-
   </div>
-
   <script>
     const container = document.querySelector(".task-wrapper");
 

@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #141e30,
+    #243b55,
+    #0f2027
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.add-texts {
+    display: flex;
+    justify-content: center;
+  margin-bottom: 20px;
+}
+.board {
+  width: 100%;
+  max-width: 1300px;
+}
+.board-headings {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  color: white;
+}
+.board-headings h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.task-wrapper {
+  display: flex;
+  gap: 25px;
+}
+.task-column {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 650px;
+}
+.task-slot {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task-card {
+  width: 100%;
+  padding: 18px;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #ff8e53
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  transition: 0.3s;
+}
+.middle-card {
+  background: linear-gradient(
+    135deg,
+    #4776e6,
+    #8e54e9
+  );
+}
+.right-card {
+  background: linear-gradient(
+    135deg,
+    #11998e,
+    #38ef7d
+  );
+}
+.task-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+.task-card input {
+  width: 20px;
+  height: 20px;
+}
+.task-card span {
+  font-size: 17px;
+  font-weight: 500;
+}
+.task-card[data-swapy-dragging] {
+  opacity: 0.4;
+}
+.task-slot[data-swapy-highlighted] {
+  background: rgba(255,255,255,0.08);
+  border: 2px dashed rgba(255,255,255,0.4);
+  border-radius: 15px;
+}
+@media (max-width: 900px) {
+  .task-wrapper {
+    flex-direction: column;
+  }
+  .board-headings {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
