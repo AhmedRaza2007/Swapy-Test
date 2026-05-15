@@ -1,49 +1,94 @@
-async function getPostDetails() {
+import { getPost, getUser, getComments } from "./api.js";
 
-  let id = new URLSearchParams(window.location.search).get("id");
+async function loadDetails() {
+
+  const id = new URLSearchParams(window.location.search).get("id");
 
   // POST
-  let postRes = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  let post = await postRes.json();
+  const post = await getPost(id);
 
   document.getElementById("post").innerHTML = `
-    <h2>${post.title}</h2>
+    <h2> Post</h2>
+    <h3>${post.title}</h3>
     <p>${post.body}</p>
   `;
 
   // USER
-  let userRes = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
-  let user = await userRes.json();
+  const user = await getUser(post.userId);
 
   document.getElementById("user").innerHTML = `
+    <h2> User</h2>
     <h3>${user.name}</h3>
     <p>${user.email}</p>
     <p>${user.address.city}</p>
   `;
 
-  // COMMENTS
-  let commentRes = await fetch(
-    `https://jsonplaceholder.typicode.com/comments?postId=${id}`
-  );
+  // COMMENTS (heading first)
+  document.getElementById("comments").innerHTML = `
+    <h2> Comments</h2>
+  `;
 
-  let comments = await commentRes.json();
+  const comments = await getComments(id);
 
-  comments.slice(0, 5).forEach(comment => {
-
+  comments.slice(0, 5).forEach((c) => {
     document.getElementById("comments").innerHTML += `
       <div class="comment">
-
-        <h4>${comment.name}</h4>
-        <p>${comment.body}</p>
-
+        <h4>${c.name}</h4>
+        <p>${c.body}</p>
       </div>
     `;
-
   });
 
 }
 
-getPostDetails();
+loadDetails();
+
+// async function getPostDetails() {
+
+//   let id = new URLSearchParams(window.location.search).get("id");
+
+//   // POST
+//   let postRes = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//   let post = await postRes.json();
+
+//   document.getElementById("post").innerHTML = `
+//     <h2>${post.title}</h2>
+//     <p>${post.body}</p>
+//   `;
+
+//   // USER
+//   let userRes = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
+//   let user = await userRes.json();
+
+//   document.getElementById("user").innerHTML = `
+//     <h3>${user.name}</h3>
+//     <p>${user.email}</p>
+//     <p>${user.address.city}</p>
+//   `;
+
+//   // COMMENTS
+//   let commentRes = await fetch(
+//     `https://jsonplaceholder.typicode.com/comments?postId=${id}`
+//   );
+
+//   let comments = await commentRes.json();
+
+//   comments.slice(0, 5).forEach(comment => {
+
+//     document.getElementById("comments").innerHTML += `
+//       <div class="comment">
+
+//         <h4>${comment.name}</h4>
+//         <p>${comment.body}</p>
+
+//       </div>
+//     `;
+
+//   });
+
+// }
+
+// getPostDetails();
 
 // // POST
 // fetch("https://jsonplaceholder.typicode.com/posts/" + id)

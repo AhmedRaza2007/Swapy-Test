@@ -1,0 +1,35 @@
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #e50914;
+      margin-top: 20px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    #post, #user, #comments {
+      margin-bottom: 20px;
+    }
+
+    .comment {
+      background: #1f1f1f;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .comment h4 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .comment p {
+      color: #bbb;
+      font-size: 14px;
+    }

@@ -1,25 +1,21 @@
 const API = "https://jsonplaceholder.typicode.com";
 
-// GET POSTS
-function getPosts(limit = 10) {
-  return fetch(`${API}/posts?_limit=${limit}`)
-    .then(res => res.json());
+export async function getPosts(limit = 10) {
+  const res = await fetch(`${API}/posts?_limit=${limit}`);
+  return await res.json();
 }
 
-// GET SINGLE POST
-function getPost(id) {
-  return fetch(`${API}/posts/${id}`)
-    .then(res => res.json());
+export async function getPost(id) {
+  const res = await fetch(`${API}/posts/${id}`);
+  return await res.json();
 }
 
-// GET USER
-function getUser(id) {
-  return fetch(`${API}/users/${id}`)
-    .then(res => res.json());
+export async function getUser(id) {
+  const res = await fetch(`${API}/users/${id}`);
+  return await res.json();
 }
 
-// GET COMMENTS
-function getComments(postId) {
-  return fetch(`${API}/comments?postId=${postId}`)
-    .then(res => res.json());
+export async function getComments(postId) {
+  const res = await fetch(`${API}/comments?postId=${postId}`);
+  return await res.json();
 }

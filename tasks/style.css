@@ -1,17 +1,55 @@
 body {
+  margin: 0;
   font-family: Arial;
-  background: #f2f2f2;
+  background: #111;
+  color: white;
+}
+
+h1 {
+  color: #e50914;
+  font-size: 28px;
+}
+.post{
+    font-size: 60px;
+    text-align: center;
+    font-weight: 900;
+}
+#posts {
+  display: grid;
+  gap: 20px;
   padding: 20px;
 }
+
 .card {
-  background: white;
+  background: #1f1f1f;
   padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
+.card h2 {
+  font-size: 16px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+h3 {
+  color: #e50914;
+}
+
 button {
   padding: 8px 12px;
-  background: black;
-  color: white;
+  background: #e50914;
   border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #ff1b2d;
 }
