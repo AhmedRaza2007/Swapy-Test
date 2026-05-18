@@ -10,7 +10,6 @@ async function loadPosts() {
 
     postsDiv.innerHTML += `
       <div class="card">
-        <h1>${post.heading}</h1>
         <h2>${post.title}</h2>
         <p>${post.body}</p>
 
@@ -35,5 +34,5 @@ postsDiv.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn")) {
     const id = e.target.dataset.id;
     window.location.href = `details.html?id=${id}`;
-  }
+  } 
 });
